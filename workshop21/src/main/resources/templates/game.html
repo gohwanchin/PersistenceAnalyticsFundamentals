@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${game.name}"></title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td><img th:src="${game.image}"></td>
+            <td>
+                <p>Name: <a th:href="${game.url}" th:text="${game.name}"></a></p>
+                <p>Year: <span th:text="${game.year}"></span></p>
+                <p>Ranking: <span th:text="${game.ranking}"></span></p>
+                <p>Users rated:<span th:text="${game.usersRated}"></span></p>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr th:each="comment: ${comments}">
+            <td>
+                <p>
+                    <span th:text="${comment.user}"></span>
+                    <span th:text="${comment.rating}"></span>
+                </p>
+                <p>
+                    <span th:text="${comment.cText}"></span>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <div><a th:href="@{/game/{id}(id=${game.gid},limit=10,offset=${offset}+10)}">Next</a></div>
+</body>
+
+</html>
