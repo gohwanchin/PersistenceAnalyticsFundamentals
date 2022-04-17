@@ -1,6 +1,7 @@
 package sg.edu.nus.day23;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.mockito.ArgumentMatchers.anyString;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -24,7 +25,7 @@ public class AddressBookServiceTest {
     public void shouldReturn() {
         String email = "test";
         //Mocks the game repository method
-        Mockito.when(addRepo.checkExists(email)).thenReturn(false);
+        Mockito.when(addRepo.checkExists(anyString())).thenReturn(false);
 
         //Calls the mock method
         Boolean exists = addSvc.checkEmail(email);

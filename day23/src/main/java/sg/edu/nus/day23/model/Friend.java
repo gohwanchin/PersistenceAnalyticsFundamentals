@@ -1,7 +1,9 @@
 package sg.edu.nus.day23.model;
 
-import java.sql.Date;
+import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class Friend {
@@ -9,6 +11,7 @@ public class Friend {
     private String name;
     private String phone;
     private String status;
+    @DateTimeFormat(iso = ISO.DATE)
     private Date dob;
     private String passphrase;
 
