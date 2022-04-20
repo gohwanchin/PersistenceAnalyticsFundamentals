@@ -3,7 +3,6 @@ package sg.edu.nus.day24.model;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
 
 public class PO {
@@ -20,12 +19,6 @@ public class PO {
     }
 
     private synchronized String generateID(int numChars) {
-        // Random r = new Random();
-        // StringBuilder strBuilder = new StringBuilder();
-        // while (strBuilder.length() < numChars) {
-        // strBuilder.append(Integer.toHexString(r.nextInt()));
-        // }
-
         return UUID.randomUUID().toString().substring(0, numChars);
     }
 

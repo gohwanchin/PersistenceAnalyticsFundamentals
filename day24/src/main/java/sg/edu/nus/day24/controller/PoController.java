@@ -1,7 +1,6 @@
 package sg.edu.nus.day24.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,7 @@ public class PoController {
     public String postPO(@ModelAttribute PO po, Model model) {
         try {
             poSvc.addPO(po);
-        } catch (DataAccessException err) {
+        } catch (Exception err) {
             model.addAttribute("msg", err.getMessage());
             return "error";
         }

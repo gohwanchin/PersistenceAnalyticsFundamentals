@@ -23,7 +23,7 @@ public class PoRepository {
         int lineItemAdded = 0;
         try {
             for (LineItem item : po.getLineItems()) {
-                if (item.getSku() != 0 || item.getQty() > 0)
+                if (item.getSku() != null || item.getQty() > 0)
                     lineItemAdded += template.update(SQL_INSERT_LINE_ITEMS, item.getQty().toString(), po.getOrderId(),
                             item.getSku());
             }

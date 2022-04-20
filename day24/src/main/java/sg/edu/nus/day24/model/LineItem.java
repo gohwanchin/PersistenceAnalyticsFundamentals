@@ -1,15 +1,14 @@
 package sg.edu.nus.day24.model;
 
 public class LineItem {
-    // TODO try if can don't set default to 0
-    private Integer sku = 0;
-    private Integer qty = 0;
+    private Integer sku;
+    private Integer qty;
 
     public Integer getSku() {
         return sku;
     }
 
-    public void setSku(int sku) {
+    public void setSku(Integer sku) {
         this.sku = sku;
     }
 
@@ -17,7 +16,7 @@ public class LineItem {
         return qty;
     }
 
-    public void setQty(int qty) {
+    public void setQty(Integer qty) {
         this.qty = qty;
     }
 }
